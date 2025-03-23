@@ -2,19 +2,41 @@
     box-sizing: border-box;
 }
 
+p::selection ,input::selection, image::selection, label::selection, button::selection{
+    background-color: green;
+    color: white;
+}
+
 body{
     padding: 0px;
     margin: 0px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     max-width: 100%;
     overflow-x: hidden;
+}
+
+button{
+    z-index: 1;
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+#inv-navbar{
+    display: flex;
+    width: 100%;
+    height: 50px;
 }
 
 .navbar ul{
     display: flex;
     position: static;
     justify-content: center;
-    background-color: hsla(114, 67%, 33%, 0.757);
+    background-color: hsl(114, 67%, 31%);
     padding-top: 0px;
     padding-bottom: 0px;
     margin: 0px;
@@ -246,12 +268,12 @@ body{
     display: flex;
     flex-direction: column;
     top: 0;
-    right: -410px;
+    right: -430px;
     transition: right 0.3s ease-in-out;
     box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
     border: 5px solid green;
     border-radius: 20px;
-    z-index: 3;
+    z-index: 11;
 }
 
 
@@ -483,10 +505,6 @@ body{
     cursor: auto;
 }
 
-input::placeholder{
-    color: white;
-}
-
 #price-search {
     background-color: green;
     color: white;
@@ -606,42 +624,58 @@ input::placeholder{
 }
 
 @media (max-width: 768px) {
-   #principal-text{
-    font-size: 38px;
-    top: -50px;
-    position: relative;
-   }
-   
-    #principal-text-container {
-        flex-direction: column; /* Elemente unul sub altul */
-        text-align: center;
-        padding: 20px;
-        height: auto; /* Ajustează automat înălțimea */
+    #principal-text{
+     font-size: 38px;
+     top: -50px;
+     position: relative;
     }
+    
+     #principal-text-container {
+         flex-direction: column; /* Elemente unul sub altul */
+         text-align: center;
+         padding: 20px;
+         height: auto; /* Ajustează automat înălțimea */
+     }
+ 
+     #principal-text-add {
+         font-size: 42px; /* Ajustează dimensiunea textului */
+         height: 40px; /* Păstrează spațiu pentru animație */
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         overflow: hidden;
+         position: relative;
+         top: -40px;
+     }
 
-    #principal-text-add {
-        font-size: 42px; /* Ajustează dimensiunea textului */
-        height: 40px; /* Păstrează spațiu pentru animație */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        overflow: hidden;
-        position: relative;
-        top: -70px;
-    }
 
     .role {
         display: block;
         height: 100%;
         animation: role-change 4s infinite;
     }
+
 }
 
-@media (max-width: 480px) {
+
+#container-price-search{
+    padding: 10px;
+}
+
+@media (max-width: 370px) {
+    .own-merch{
+        width: 10px;
+    }
+}
+
+
+@media (max-width: 430px) {
+
+
     #principalsection2{
-        transform: scale(0.98);
-        padding-left: 15px;
-        padding-right: 15px;
+        
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     #principalsection1{
@@ -688,8 +722,192 @@ input::placeholder{
         top: -15px;
     }
 
+
 }
 
-#container-price-search{
+@media(max-width: 350px){
+    
+    .input{
+        width: 130px;
+    }
+
+    #principal-text{
+        font-size: 33.5px;
+    }
+
+    .own-merch{
+        width: 115px;
+        height: auto;
+    }
+
+    .buy-dev{
+        padding-left: 30px;
+        padding-right: 30px;
+        position: relative;
+        top: -15px;
+    }
+
+    .buy{
+        padding-left: 9px;
+        padding-right: 9px;
+        position: relative;
+        top: -15px;
+    }
+
+    .remove{
+        position: relative;
+        top: -15px;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .title{
+        margin: 5px;
+        font-size: 17.4px;
+    }
+
+    #principal-text-add{
+        top: -40px;
+    }
+}
+
+#section2{
+    gap: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#all-steps-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.steps-to-create{
+    border: none;
+    border-radius: 25px;
+    height: 250px;
+    width: 200px;
+    background-image: url(Images/BackgroundStep2.jpg);
+    background-position: center;
+    background-size: cover;
+    box-shadow: 4px 4px 20px rgb(159, 164, 159);
+}
+
+.title-step-container{
+    text-align: center;
+}
+
+.step-title{
+    font-size: 25px;
+    font-weight: bold;
+    color: green;
+    margin: 25px;
+}
+
+.step-content{
+    color: green;
+    font-weight: bold;
+    margin: 15px;
+}
+
+@media(max-width: 810px){
+
+    .steps-to-create{
+        height: auto;
+        padding-bottom: 15px;
+        width: 100%;
+    }
+}
+
+@media(max-width: 500px){
+
+    .input{
+        width: 80%;
+    }
+
+    #own-merch{
+        width: 100%;
+    }
+}
+
+#contact-container{
+    height: auto;
+    width: auto;
+    border: 2px solid green;
+    border-radius: 25px;
+    padding: 30px;
+}
+
+.label-contact{
+    font-weight: bold;
+    color: green;
+}
+
+#text-contact{
+    height: 320px;
+    width: 100%;
+}
+
+#searching-bar input::placeholder{
+    color: white;
+}
+
+input::placeholder{
+    color: green;
+}
+
+#submit{
+    float: right;
     padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    color: white;
+    background-color: green;
+    border: none;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#submit:hover{
+    background-color: white;
+    transition: 0.45s;
+    color: green;
+    border: 2px solid green;
+    font-weight: bold;
+}
+
+#principalsection3{
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+}
+
+#contact-container{
+    width: 100%;
+    border: 2px solid green;
+}
+
+.section{
+    padding: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+@media(max-width: 700px){
+    #contact-container{
+        padding: 12px;
+    }
+}
+
+textarea{
+    resize: none;
+}
+
+@media(max-width: 425px){
+    #contact-container input{
+        width: 150px;
+    }
 }

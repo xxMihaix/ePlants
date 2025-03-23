@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creativity</title>
+    <link rel="stylesheet" href="style_all_pages.css">
+</head>
+<body>
+    <!--Header-->
+        <div id="principal-enter">
+            <navbar class="navbar">
+                <ul>
+                    <li><a href="---">SHOP</a></li>
+                    <li><a href="---">CONTACT</a></li>
+                    <li><button id="cart-open">CART</button></li>
+                </ul>
+            </navbar>
+            <div id="inv-navbar"></div>
+
+            <div id="principal-text-super-container"></div>
+            <div id="principal-text-container">
+                <p id="principal-text">Lumea plantelor la tine:</p>
+                <div id="principal-text-add">
+                    <span class="role">Acasă</span>
+                    <span class="role">Birou</span>
+                    <span class="role">Grădină</span>
+                    <span class="role">Evenimente</span>
+                    <span class="role">Acasă</span>
+                </div>
+            </div>
+
+        </div> 
+    
+    <main>
+
+       <div id="cart-container">
+        <div id="cart">
+            <div id="title-cart">Cosul tau!<button id="cart-exit">Close</button></div>
+            <div id="cart-added">
+                <!-- Elementele din coș vor fi adăugate aici dinamic -->
+            </div>
+            <div id="total-sum">
+                <p>Total: <span id="total-amount">0 lei</span></p>
+            </div>
+        </div>
+        </div>
+
+
+            <div id="STOPDISPLAYFLEXING">
+                <!--Section 1-->
+                <div class="principal-important-section">  
+                    <div id="principalsection1" class="principalsection">    
+                        <div class="principal-title"><p>Plantele Noastre:</p></div>
+                        <div id="container-align-searching">
+                            <div id="searching-bar">
+                                <input type="search" id="search-bar" placeholder="Search...">
+                            </div>
+                            <!-- Buton pentru filtrare -->
+                            <button id="price-search">Adjust Price</button>
+            
+                            <!-- Meniul dropdown (moved outside the button) -->
+                            <div id="container-price-search">
+                                <label><input type="radio" id="radio1" class="radio-radio" name="radio-price"> Low - High</label><br>
+                                <label><input type="radio" id="radio2" class="radio-radio" name="radio-price"> High - Low</label>
+                            </div>
+
+                        </div> 
+                        <div id="section1" class="section">
+                            <!--TEST
+                                <div class="own-merch" class="merch-hover">
+                                    <div class="image-container"><img src="Images/Ficus.jpeg" class="items-image"></div>
+                                    <p class="title">Ficus</p>
+                                    <p class="prience">Pret: 349,99 lei</p>
+                                    <div class="buy-container"><button class="buy">BUY</button></div><br>
+                                    <div class="buy-container"><button class="remove">Remove</button></div>
+                                </div>-->
+                        </div>
+                    </div>
+                </div>
+
+
+        </div>
+       
+
+        <!--Section 2-->
+        <br>
+        <div class="principal-important-section">
+            <div id="principalsection2" class="principalsection">
+                <div class="principal-title"><p>Creaza produs:</p></div>
+                <div id="section2" class="section">
+    
+                    <!--Own Art Test-->
+                    <div id="own-merch" class="merch-STOP">
+                        <p class="title">Creaza un produs nou:</p>
+                        <div id="container-input1" class="container-input">
+                            <label for="input-title" class="label">Title:</label>
+                            <input type="text" id="input-title" class="input" placeholder="Type here">
+                        </div><br>
+                        <div id="container-input2" class="container-input">
+                            <label for="input-price" class="label">Price:</label>
+                            <input type="number" id="input-price" class="input" placeholder="Type here">
+                        </div><br>
+                        <div id="container-input3" class="container-input">
+                            <label for="input-image" class="label">Image:</label>
+                            <input type="file" id="input-image" class="input">
+                        </div><br><br>
+                        <div class="buy-container"><button id="add-new" class="special-buy">ADD NEW</button></div>
+                    </div>
+
+                    <!--Steps to Create-->
+
+                    <div id="all-steps-container">
+                        <div class="steps-to-create">
+                            <div class="title-step-container">
+                                <p class="step-title">Pasul 1:</p>
+                                <p class="step-content">Trebuie sa adaugi un titlu pentru produsul tau in sectiunea specificata.</p>
+                                <div class="img-step-container">
+                                    <img src="Images/StepTitle.png" class="img-step">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="steps-to-create">
+                            <div class="title-step-container">
+                                <p class="step-title">Pasul 2:</p>
+                                <p class="step-content">Trebuie sa adaugi un pret pentru produsul tau in sectiunea specificata.</p>
+                                <div class="img-step-container">
+                                    <img src="Images/StepPrice.png" class="img-step">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="steps-to-create">
+                            <div class="title-step-container">
+                                <p class="step-title">Pasul 3:</p>
+                                <p class="step-content">Poti adauga si o imagine, dar aceasta momentan va fi inlocuita cu un X. Dupa completarea spatiilor, poti crea produsul dorit!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <div class="principal-important-section">
+        <div id="principalsection3" class="principalsection">
+            <div class="principal-title"><p>Contacteaza-ne:</p></div>
+            <div id="section3" class="section">
+            
+                <form id="contact-container" action="https://api.web3forms.com/submit" method="POST">
+                    
+                    <input type="hidden" name="access_key" value="3e158545-8998-4ccc-b807-5ab9f3f2f24d">
+                    
+                    <label for="name-contact" class="label-contact">Full Name:</label>
+                    <input type="text" id="name-contact" placeholder="Name" name="name"><br><br>
+
+                    <label for="email-contact" class="label-contact">Email:</label>
+                    <input type="email" id="email-contact" placeholder="Email" name="email"><br><br>
+
+                    <label for="email-contact" class="label-contact">Tel:</label>
+                    <input type="tel" id="tel-contact" placeholder="Tel" name="tel">Optional*<br><br>
+
+                    <label for="name-contact" class="label-contact">Scrie-ne:</label><br>
+                    <textarea type="search" id="text-contact" placeholder="Scrie aici:" name="message"></textarea><br><br>
+
+                    <button id="submit">Trimite</button>
+                
+                </form>
+            
+            </div>
+         </div>
+    </div>
+
+    
+    
+</main>
+</body>
+    <!--Footer-->
+    <footer>  
+    <br><br><br>
+    <div id="footer-container">
+        <p id="footer-text">
+            &copy; 2025 Toate drepturile rezervate | Website realizat de ×꧁♤Mihคi♤꧂×
+        </p>
+    </div>
+    </footer>
+    <script src="action.js"></script>
+</body>
+</html>

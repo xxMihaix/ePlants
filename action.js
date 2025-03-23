@@ -35,33 +35,13 @@ function addNewProduct() {
 // Funcție pentru a încărca și afișa produsele din localStorage
 function loadProducts() {
     const section2 = document.getElementById("section2");
-    section2.innerHTML = '';
 
     // Ștergem conținutul vechi pentru a reîncărca corect
     const section1 = document.getElementById("section1");
     section1.innerHTML = "";
 
-    // Creăm formularul pentru adăugarea unui nou produs
-    const inputDiv = document.createElement("div");
-    inputDiv.id = "own-merch";
-    inputDiv.className = "merch---STOP";
-    inputDiv.innerHTML = `
-        <p class="title">Creaza produs nou:</p>
-        <div class="container-input">
-            <label for="input-title" class="label">Title:</label>
-            <input type="text" id="input-title" class="input" placeholder="Type here">
-        </div><br>
-        <div class="container-input">
-            <label for="input-price" class="label">Price:</label>
-            <input type="number" id="input-price" class="input" placeholder="Type here">
-        </div><br>
-        <div class="container-input">
-            <label for="input-image" class="label">Image:</label>
-            <input type="file" id="input-image" class="input">
-        </div><br><br>
-        <div class="buy-container"><button id="add-new" class="buy">ADD NEW</button></div>
-    `;
-    section2.appendChild(inputDiv);
+
+    
     document.getElementById("add-new").addEventListener("click", addNewProduct);
 
     // Obținem produsele din localStorage sau inițializăm un array gol
@@ -293,7 +273,7 @@ let isOpen = false;
 
 openCart.addEventListener("click", function() {
     if(isOpen){
-        cartContainer.style.right = "-410px";
+        cartContainer.style.right = "-430px";
     }
     else{
         cartContainer.style.right = "0";
@@ -303,7 +283,7 @@ openCart.addEventListener("click", function() {
 
 
 closeCart.addEventListener("click", () => {
-    cartContainer.style.right = "-410px";
+    cartContainer.style.right = "-430px";
     isOpen = false;
 });
 
