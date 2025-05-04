@@ -273,7 +273,7 @@ let isOpen = false;
 
 openCart.addEventListener("click", function() {
     if(isOpen){
-        cartContainer.style.right = "-430px";
+        cartContainer.style.right = "-450px";
     }
     else{
         cartContainer.style.right = "0";
@@ -283,7 +283,7 @@ openCart.addEventListener("click", function() {
 
 
 closeCart.addEventListener("click", () => {
-    cartContainer.style.right = "-430px";
+    cartContainer.style.right = "-450px";
     isOpen = false;
 });
 

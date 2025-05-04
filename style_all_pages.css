@@ -37,15 +37,21 @@ button{
     position: static;
     justify-content: center;
     background-color: hsl(114, 67%, 31%);
-    padding-top: 0px;
-    padding-bottom: 0px;
     margin: 0px;
     align-items: center;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     width: 100%;
+    padding: 0px;
 }
 
+#cart-open{
+    padding-left: 2px;
+}
+
+#ac{
+    padding-left: 6px;
+}
 .navbar ul li{
     padding: 10px;
     padding-left: 7px;
@@ -268,7 +274,7 @@ button{
     display: flex;
     flex-direction: column;
     top: 0;
-    right: -430px;
+    right: -450px;
     transition: right 0.3s ease-in-out;
     box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
     border: 5px solid green;
@@ -674,8 +680,10 @@ button{
 
     #principalsection2{
         
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 15px;
+        padding-right: 14px;
+        display: wrap;
+        flex-wrap: flex;
     }
 
     #principalsection1{
@@ -772,9 +780,11 @@ button{
 }
 
 #section2{
-    gap: 70px;
+    gap: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 #all-steps-container{
@@ -911,3 +921,71 @@ textarea{
         width: 150px;
     }
 }
+
+
+#image-container-minigame{
+    height: 240px;
+    border-radius: 25px;
+    border: 2px solid green;
+}
+
+#text-minigame{
+    border: 2px solid green;
+    border-radius: 20px;
+    padding: 20px;
+    width: 40%;
+}
+
+#minigame-title{
+    text-align: center;
+    color: green;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#minigame-subtitle{
+    text-align: center;
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#container-minigame-sections{
+    display: block;
+    gap: 20px;
+    align-items: center;
+}
+
+#click-here-indications{
+    color: green;
+    
+    text-align: center;
+}
+
+#click-here-button{
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width: 980px){
+    #image-container-minigame{
+        display: block;
+    }
+}
+
+@media(max-width: 725px){
+    #text-minigame{
+        border: 2px solid green;
+        border-radius: 20px;
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+
+
