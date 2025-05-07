@@ -1021,3 +1021,24 @@ textarea{
     color: white;
     text-align: center;
 }
+
+/*----------------------------------------*/
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+    transform: translateY(20%);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0)
+}
+
+@media(prefers-reduced-motion){
+    .hidden {
+        transition: none;
+    }
+}
