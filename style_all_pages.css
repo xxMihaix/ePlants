@@ -19,24 +19,63 @@ button{
     z-index: 1;
 }
 
-.navbar{
+#cart-opennavbar{
     display: flex;
     position: fixed;
     width: 100%;
     z-index: 10;
 }
 
+.navbar{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 15;
+}
+
+.navbar2{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 13;
+}
+
+@media(max-width: 520px){
+    .navbar{
+        display: none;
+    }  
+}
+
+@media(min-width: 520px){
+    .navbar2{
+        display: none;
+    }
+}
+
 #inv-navbar{
     display: flex;
     width: 100%;
-    height: 50px;
+    height: 46px;
 }
 
 .navbar ul{
     display: flex;
     position: static;
     justify-content: center;
-    background-color: hsl(114, 67%, 31%);
+    background-color: hsl(114, 80%, 35%);
+    margin: 0px;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 100%;
+    padding: 0px;
+}
+
+.navbar2 ul{
+    display: flex;
+    position: static;
+    justify-content: center;
+    background-color: hsl(114, 80%, 35%);
     margin: 0px;
     align-items: center;
     border-bottom-left-radius: 15px;
@@ -59,7 +98,14 @@ button{
     list-style-type: none;
 }
 
-.navbar ul li a{
+.navbar2 ul li{
+    padding: 10px;
+    padding-left: 7px;
+    padding-right: 10px;
+    list-style-type: none;
+}
+
+.navbar ul li button{
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -67,10 +113,69 @@ button{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-.navbar ul li:hover a{
+.navbar2 ul li button{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.navbar ul li:hover button{
     text-shadow: 3px 3px 5px;
     transition: 0.8s;
 }
+
+.navbar2 ul li:hover button{
+    text-shadow: 3px 3px 5px;
+    transition: 0.8s;
+}
+
+/*-------------------DROPDOWN-NAVBAR-----------------*/
+#dropdown-navbar {
+    position: fixed;
+    top: -100px;  /*la normal in loc de top: 0 este 45px, pt inv-navbar neaplicat pt pozitie fixa*/
+    display: block;
+    width: 100%;
+    background-color: hsl(114, 80%, 35%);
+    border-top: 3px solid rgb(2, 99, 2);
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    z-index: 12;
+    transition: top 0.3s ease-in-out;
+}
+
+#dropdown-navbar ul {
+    padding: 0;
+    margin: 0;
+}
+
+#dropdown-navbar.active {
+    max-height: 300px; /* Ajustează în funcție de cât conținut ai */
+    opacity: 1;
+}
+
+
+#dropdown-navbar li{
+    margin: 7px;
+    padding: 6px;
+    text-align: center;
+    color: white;
+    list-style-type: none;
+}
+
+#dropdown-navbar li:hover button{
+    color: green;
+}
+
+#dropdown-navbar li:hover{
+    background-color: white;
+    border-radius: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/*--------------------------------------------------*/
 
 .principal-important-section{
     display:flex;
@@ -279,11 +384,11 @@ button{
     box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
     border: 5px solid green;
     border-radius: 20px;
-    z-index: 11;
+    z-index: 20;
 }
 
 
-#cart-open{
+.cart-open{
     font-size: 20px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border: none;
@@ -294,7 +399,7 @@ button{
     cursor: pointer;
 }
 
-#cart-open:hover{
+#cart-open2:hover{
     text-shadow: 3px 3px 5px;
     transition: 0.8s;
 }
@@ -447,7 +552,7 @@ button{
 
 .quantity-class:hover {
     background-color: green;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .quantity-class:active {
@@ -537,13 +642,14 @@ button{
 
 #principal-enter{
     width: 100%;
-    height: 300px;
+    height: 320px;
     background-position: center;
     border-bottom-left-radius:20px;
     border-bottom-right-radius:20px;
     box-shadow: 2px 2px 5px rgb(152, 153, 152);
     background-image: url(https://media.architecturaldigest.com/photos/5dcde00380598800086215f6/16:9/w_2560%2Cc_limit/Osofsky_Oct19-5.jpg);
 }
+
 
 #principal-text-container{
     display: flex;
@@ -554,14 +660,14 @@ button{
     padding-right: 8%;
     box-sizing: border-box;
     border-radius: 8px;
-    height: 220px;
 }
 
 #principal-text{
     color: rgb(255, 255, 255);
     font-size: 45px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding: 20px;
+    padding: 10px;
+    padding-top: 20px;
     border-radius: 30px;
     text-align: center;
 }
@@ -570,7 +676,7 @@ button{
     list-style-type: none;
     font-weight: bold;
     font-size: 45px;
-    color: rgb(253, 253, 253);
+    color: rgb(255, 255, 255);
     overflow: hidden;
     position: relative;
     align-items: center;

@@ -266,19 +266,22 @@ window.addEventListener("load", () => {
     loadCartItems();
 });
 
-const openCart = document.getElementById("cart-open");
+///////////////////////////////////
+
+const openCart = document.querySelectorAll(".functionality");
 const cartContainer = document.getElementById("cart-container");
 const closeCart = document.getElementById("cart-exit");
 let isOpen = false;
 
-openCart.addEventListener("click", function() {
-    if(isOpen){
-        cartContainer.style.right = "-450px";
-    }
-    else{
-        cartContainer.style.right = "0";
+openCart.forEach(button => {
+  button.addEventListener("click", function() {
+    if (isOpen) {
+      cartContainer.style.right = "-450px";
+    } else {
+      cartContainer.style.right = "0";
     }
     isOpen = !isOpen;
+  });
 });
 
 
@@ -286,6 +289,24 @@ closeCart.addEventListener("click", () => {
     cartContainer.style.right = "-450px";
     isOpen = false;
 });
+
+//////////////////////////////////////////
+
+const navButtons = document.querySelectorAll(".nav-button");
+
+navButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const targetId = button.getAttribute("data-target");
+    const section = document.getElementById(targetId);
+    if (section) {
+      const offsetTop = section.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+    }
+  });
+});
+
+
+//////////////////////////////////////////////////
 
 document.querySelectorAll('input[name="radio-price"]').forEach((radio) => {
     radio.addEventListener("change", (event) => {
@@ -362,3 +383,19 @@ function displayFilteredProducts(filteredProducts) {
     });
 }
 
+function openDropdown() {
+    const dropdown = document.getElementById("dropdown-navbar");
+    const fix = document.getElementById("dropdown-fix");
+
+    if(dropdown.style.top === "45px"){
+        dropdown.style.top = "-100px";
+        fix.style.borderBottomLeftRadius = "15px";
+        fix.style.borderBottomRightRadius = "15px";
+    }
+    else{
+        dropdown.style.top = "45px";
+        fix.style.borderBottomLeftRadius = "0px";
+        fix.style.borderBottomRightRadius = "0px";
+    }
+
+}

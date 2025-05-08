@@ -4,21 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ePlants</title>
+    <link rel="icon" href="Images/logo.jpg">
     <link rel="stylesheet" href="style_all_pages.css">
 </head>
 <body>
-    <!--Header-->
-        <div id="principal-enter">
-            <navbar class="navbar">
-                <ul>
-                    <li><a href="" id="ac">SHOP</a></li>
-                    <li><a href="">CONTACT</a></li>
-                    <li><button id="cart-open">CART</button></li>
-                </ul>
-            </navbar>
-            <div id="inv-navbar"></div>
+    <!-- Header -->
+<div id="principal-enter">
+    <!-- Navbar principal -->
+    <nav class="navbar">
+        <ul>
+            <li><button id="ac" class="cart-open nav-button" data-target="shop">SHOP</button></li>
+            <li><button class="cart-open nav-button" data-target="games">GAMES</button></li>
+            <li><button class="cart-open nav-button" data-target="list">LIST</button></li>
+            <li><button class="cart-open nav-button" data-target="contact">CONTACT</button></li>
+            <li><button id="cart-open2" class="functionality cart-open nav-button" data-target="cart">CART</button></li>
+        </ul>
+    </nav>
 
-            <div id="principal-text-super-container"></div>
+    <!-- Navbar responsive -->
+    <nav class="navbar2">
+        <ul id="dropdown-fix">
+            <li><button id="ac" class="cart-open nav-button" data-target="shop">SHOP</button></li>
+            <li><button class="cart-open functionality nav-button" data-target="cart">CART</button></li>
+            <li><button id="position" class="cart-open" onclick="openDropdown()">MENU</button></li>
+        </ul>
+    </nav>
+
+    <div id="inv-navbar"></div>
+
+    <!-- Dropdown Navbar -->
+    <div id="dropdown-navbar">
+        <ul>
+            <li><button class="cart-open nav-button" data-target="games">GAMES</button></li>
+            <li><button class="cart-open nav-button" data-target="list">LIST</button></li>
+            <li><button class="cart-open nav-button" data-target="contact">CONTACT</button></li>
+        </ul>
+    </div>
+    
+            
             <div id="principal-text-container">
                 <p id="principal-text">Lumea plantelor la tine:</p>
                 <div id="principal-text-add">
@@ -48,7 +71,7 @@
 
 
             <div id="STOPDISPLAYFLEXING">
-                <section  class="hidden">
+                <section id="shop" class="hidden">
                 <!--Section 1-->
                 <div class="principal-important-section">  
                     <div id="principalsection1" class="principalsection">    
@@ -83,7 +106,7 @@
 
         </div>
 
-        <section  class="hidden">
+        <section id="games" class="hidden">
         <!--Section 2-->
     <br>
     <div class="principal-important-section">
@@ -109,7 +132,7 @@
 </section>
 
 
-    <section  class="hidden">
+    <section id="list" class="hidden">
     <!--Section 3-->
     <div class="principal-important-section">
         <div id="principalsection2" class="principalsection">
@@ -192,7 +215,7 @@
     </div>
 
 
-<section  class="hidden">
+<section id="contact" class="hidden">
     <!--Section 5-->
     <div class="principal-important-section">
         <div id="principalsection3" class="principalsection">
