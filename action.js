@@ -381,14 +381,17 @@ function displayFilteredProducts(filteredProducts) {
     document.querySelectorAll(".buy, .buy-dev").forEach(button => {
         button.addEventListener("click", addToCart);
     });
+
 }
+
+console.log("checked");
 
 function openDropdown() {
     const dropdown = document.getElementById("dropdown-navbar");
     const fix = document.getElementById("dropdown-fix");
 
     if(dropdown.style.top === "45px"){
-        dropdown.style.top = "-100px";
+        dropdown.style.top = "-150px";
         fix.style.borderBottomLeftRadius = "15px";
         fix.style.borderBottomRightRadius = "15px";
     }
@@ -399,3 +402,55 @@ function openDropdown() {
     }
 
 }
+
+function checkedButton() {
+    const checkButton = document.getElementById("check");
+    const navbar = document.getElementById("navbar");
+
+    // Elemente ce vor primi clasa 'active'
+    const elements = [
+        document.getElementById("search-bar"),
+        document.querySelector(".circle-circle"),
+        document.querySelector(".svg1"),
+        document.querySelector(".svg2"),
+        document.getElementById("body"),
+        
+    ];
+
+    checkButton.addEventListener('change', function () {
+        elements.forEach(element => {
+            if (checkButton.checked) {
+                element.classList.add('dark-mode');
+                element.classList.add('active');
+            } else {
+                element.classList.remove('dark-mode');
+                element.classList.remove('active');
+            }
+        });
+        //localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+    });
+}
+
+function checkedButton2() {
+  const checkButton2 = document.getElementById("check2");
+  const elements = [
+    document.querySelector(".circle-circle-1"),
+    document.querySelector(".svg1-1"),
+    document.querySelector(".svg2-1"),
+    document.getElementById("body")
+  ];
+
+  elements.forEach(element => {
+    if (checkButton2.checked) {
+      element.classList.add('dark-mode');
+      element.classList.add('active');
+    } else {
+      element.classList.remove('dark-mode');
+      element.classList.remove('active');
+    }
+  });
+}
+
+
+
