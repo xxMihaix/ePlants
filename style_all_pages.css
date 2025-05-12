@@ -52,6 +52,7 @@ button{
     .navbar{
         display: none;
     }  
+    
 }
 
 @media(min-width: 620px){
