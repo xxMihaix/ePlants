@@ -28,33 +28,6 @@ function checkedButton(isDark) {
 
 }
 
-function checkedButtonW(isDark) {
-    const checkButton = document.getElementById("check");
-
-    const elements = [
-        document.getElementById("search-bar"),
-        document.querySelector(".circle-circle"),
-        document.querySelector(".svg1"),
-        document.querySelector(".svg2"),
-        document.getElementById("body"),
-    ];
-
-        elements.forEach(element => {
-            if (checkButton.checked) {
-                element.classList.add('dark-mode', 'active');
-                isDark = "true";
-                console.log("isDark");
-                localStorage.setItem("isDark", isDark);
-            } else {
-                element.classList.remove('dark-mode', 'active');
-                isDark = "false";
-                console.log("isntDark");
-                localStorage.setItem("isDark", isDark);
-            }
-        });
-
-}
-
 function checkedButton2(isDark) {
     const checkButton2 = document.getElementById("check2");
 
@@ -117,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".circle-circle-1"),
         document.querySelector(".svg1-1"),
         document.querySelector(".svg2-1"),
-        document.getElementById("body")
+        document.getElementById("body"),
     ];
 
     // Verificăm dacă tema întunecată a fost activată anterior

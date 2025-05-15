@@ -17,7 +17,7 @@ body{
 }
 
 body.dark-mode{
-    background-color: rgb(46, 40, 40);
+    background-color: rgb(52, 51, 51);
     transition: 0.5s;
 }
 
@@ -147,6 +147,7 @@ button{
 }
 
 /*-------------------DROPDOWN-NAVBAR-----------------*/
+
 #dropdown-navbar {
     position: fixed;
     top: -150px;  /*la normal in loc de top: 0 este 45px, pt inv-navbar neaplicat pt pozitie fixa*/

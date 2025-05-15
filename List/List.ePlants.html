@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+    <p id="title">To-Do List</p>
+        <div id="first-principal-container">
+        <div id="first-container">
+            <p id="title-create">Create Activity:</p>    
+
+            <div id="center">
+                <div class="input-container">
+                    <label for="activity-input">Activity:</label>
+                    <input type="text" class="first-item-interface" placeholder="Type here..." id="activity-input">
+                </div>
+
+                
+                <div class="input-container">
+                    <label for="day-input">Day:</label>
+                    <input type="date" class="first-item-interface" placeholder="Type here..." id="day-input">
+                </div>
+
+                <div class="input-container">
+                    <label for="hour-input">Hour:</label>
+                    <input type="time" class="first-item-interface" placeholder="Type here..." id="hour-input">
+                </div>
+                
+                
+                
+                    <input type="submit" id="submit" value="Add" onclick="addList()">
+            </div>
+        </div>
+        </div><br><br><br>
+        
+        <div id="sec-principal-container">
+            <p id="your-list">Your List</p>
+            <div id="second-principal-container">
+                <div id="second-container">  
+
+                    <!-- List down below: -->
+                    <div class="activity">
+                        <p class="activ costum">Activity</p>
+                        
+                        <div class="day-hour-content">
+                        <div class="day-hour">
+                            <p class="costum">Day:</p>
+                            <p class="costum">content</p>  
+                        </div>
+
+                        <div class="day-hour">
+                            <p class="costum">Hour:</p>
+                            <p class="costum">content</p>
+                        </div>
+                        </div>
+
+                        <button class="remove">Remove</button>
+                    </div>
+
+
+                <!--<p class="first-item">aovnjdio</p>
+                <input type="submit" class="second-item" value="Remove">
+
+                <input type="text" class="first-item-interface" placeholder="Type here...">
+                <input type="submit" class="second-item-interface" value="Add" onclick="calcList()">
+        -->
+
+                </div>
+            </div>
+        </div>
+
+    <p id="minigame">List from ePlants</p>
+    <div id="link"><a href="../index.html" class="goback">Go Back</a></div>
+    <br><br><br>
+
+
+    <script src="action.js"></script>
+    </main>
+</body>
+        
+<footer>
+    <div id="footer-container">
+        <p id="footer-text">
+            &copy; 2025 Toate drepturile rezervate | Website realizat de ×꧁♤Mihคi♤꧂×
+        </p>
+    </div>
+</footer>
+</html>
