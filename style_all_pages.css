@@ -891,7 +891,86 @@ button{
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
+}
+
+/****************************************************/
+
+.gamess{
+    border: 3px solid green;
+    border-radius: 15px;
+    width: 400px;
+    height: 220px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.dark-mode .gamess{
+    border: 3px solid white;
+}
+
+.img-container{
+    width: 200px;
+}
+
+.game-img{
+    width: 200px;
+    border-radius: 15px;
+}
+
+@media(max-width: 510px){
+    
+.img-container{
+    width: 150px;
+}
+
+.gamess{
+    width: 350px;
+}
+
+.game-img{
+    width: 150px;
+    border-radius: 15px;
+}
+}
+
+@media(max-width: 400px){
+
+.img-container{
+    width: 170px;
+}
+
+.gamess{
+    width: 265px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.game-img{
+    width: 170px;
+    border-radius: 15px;
+}
+}
+
+
+
+
+/****************************************************/
+
+#text-minigame, #image-container-minigame {
+    flex: 0 0 auto;
+}
+
+#section2::-webkit-scrollbar {
+    height: 8px;
+}
+
+#section2::-webkit-scrollbar-thumb {
+    background-color: #666;
+    border-radius: 10px;
 }
 
 #all-steps-container{
@@ -1135,7 +1214,7 @@ textarea{
     opacity: 0;
     transition: all 1s;
     filter: blur(3px);
-    transform: translateY(20%);
+    transform: translateY(15%);
 }
 
 .show {

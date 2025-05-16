@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(" NU tema întunecată restaurată.");
     }
 
-
 });
 
 /*

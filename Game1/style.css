@@ -1,0 +1,203 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    margin: 0px;
+    height: 100%;
+}
+
+.body{
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game{
+    padding: 20px;
+    box-shadow: 0px 10px 20px rgb(6, 60, 6);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    display: grid;
+   
+}
+
+.title{
+    margin: 0px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#title{
+    color: green;
+}
+
+#matchresult{
+    padding-top: 17px;
+    font-size: 20px;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    margin: 7px;
+    padding: 5px;
+}
+
+.underline{
+    border-bottom: 2px solid green;
+}
+
+#counter{
+    margin-top: 10px;
+}
+
+#delete{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+@media (max-width: 500px){
+    .container{
+        width: 100%;
+        margin: 20px;
+    }
+    .game{
+        width: 100%;
+    }
+}
+
+button{
+    border: none;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+#delete{
+    font-size: 17px;
+}
+
+.button{
+    padding: 10px;
+}
+
+#minigame{
+    text-align: center;
+    margin-top: 80px;
+    color: green;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.container{
+    justify-content: center;
+    display: grid;
+}
+
+.goback{
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+button:active{
+    transform: scale(0.9);
+    transition: 0.5;
+}
+
+footer div{
+    width: 100%;
+    background-color: green;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+#footer-text{
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 2px;
+    text-align: center;
+    font-size: 13px;
+}
+
+/*----------------------------------------*/
+
+body.dark-mode{
+    background-color: rgb(52, 51, 51);
+    transition: 0.5s; 
+}
+
+body.dark-mode p{
+    color: white;
+    transition: 0.5s; 
+}
+
+body.dark-mode #title{
+    color: white;
+}
+
+body.dark-mode .button{
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode #matchresult{
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+}
+
+body.dark-mode .underline{
+    border-bottom: 1px solid white;
+    
+}
+
+body.dark-mode .game{
+    box-shadow: 0px 10px 20px rgb(198, 192, 192);
+}
+
+body.dark-mode #delete{
+    background-color: white;
+    color: black;
+}
+
+body.dark-mode #minigame{
+    color: white;
+}
+
+body.dark-mode .goback{
+    color: white;
+}
+
+body.dark-mode footer div{
+    background-color: rgb(42, 41, 41);
+}
+
+@media(min-width: 650px){
+    .game{
+        width: 600px;
+    }
+}
