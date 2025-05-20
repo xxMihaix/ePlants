@@ -2,7 +2,6 @@ function checkedButton(isDark) {
     const checkButton = document.getElementById("check");
 
     const elements = [
-        document.getElementById("search-bar"),
         document.querySelector(".circle-circle"),
         document.querySelector(".svg1"),
         document.querySelector(".svg2"),

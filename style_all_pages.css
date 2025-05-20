@@ -150,7 +150,7 @@ button{
 
 #dropdown-navbar {
     position: fixed;
-    top: -150px;  /*la normal in loc de top: 0 este 45px, pt inv-navbar neaplicat pt pozitie fixa*/
+    top: -180px;  /*la normal in loc de top: 0 este 45px, pt inv-navbar neaplicat pt pozitie fixa*/
     display: block;
     width: 100%;
     background-color: hsl(114, 80%, 35%);
@@ -282,6 +282,33 @@ button{
     align-items: center;
 }
 
+.see-details{
+    color: green;
+    background-color: white;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 5px;
+    position: relative;
+    left: -2px;
+    font-weight: bold;
+}
+
+.dark-mode .see-details{
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 5px;
+    position: relative;
+    left: -2px;
+}
+
 .buy-container{
     display: flex;
     justify-content: center;
@@ -365,7 +392,7 @@ button{
 
 .own-merch{
     border: 2px solid green;
-    height: 270px;
+    height: 290px;
     width: 160px;
     border-radius: 25px;
 }
