@@ -282,6 +282,7 @@ button{
     align-items: center;
 }
 
+
 .see-details{
     color: green;
     background-color: white;
@@ -307,6 +308,24 @@ button{
     margin-top: 5px;
     position: relative;
     left: -2px;
+}
+
+@media(max-width: 430px){
+    .see-details{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 0px;
+        bottom: 7px;
+    }
+}
+
+@media(max-width: 350px){
+    .see-details{
+        padding-left: 7px;
+        padding-right: 7px;
+        margin-top: 0px;
+        bottom: 7px;
+    }
 }
 
 .buy-container{
@@ -1731,4 +1750,10 @@ svg{
     color: white;
     font-weight: bold;
     font-size: 17px;
+}
+
+@media(max-width: 430px){
+    .see-details{
+        padding-left: 15px;
+    }
 }
