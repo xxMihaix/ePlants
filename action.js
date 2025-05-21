@@ -104,7 +104,7 @@ function loadProducts() {
         const productId = productElement.dataset.id;
 
         // Redirecționează spre pagina de detalii
-        window.location.href = `${window.location.origin}/merch-shop/products.html?id=${productId}`;
+        window.location.href = `products.html?id=${productId}`;
 
     });
 });
