@@ -49,18 +49,18 @@ function loadProducts() {
 
    // Definim produsele predefinite
    const devProducts = [
-    { id: 1, title: "Bonsai", price: "Pret: 79.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Bonsai.jpeg"},
-    { id: 2, title: "Bambus", price: "Pret: 59.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Bambus.jpeg"},
-    { id: 3, title: "Cactus", price: "Pret: 7,89 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Cactus.jpeg"},
-    { id: 4, title: "Orhidee", price: "Pret: 29.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Orhidee.jpeg"},
-    { id: 5, title: "Buchet Flori", price: "Pret: 74.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/BuchetFlori.jpeg",},
-    { id: 6, title: "Aloe Vera", price: "Pret: 39.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/AloeVera.jpeg"},
-    { id: 7, title: "Lavanda", price: "Pret: 24.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Lavanda.jpeg"},
-    { id: 8, title: "Feriga", price: "Pret: 34.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Feriga.jpg"},
-    { id: 9, title: "Craciunita", price: "Pret: 44.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Craciunita.jpg"},
-    { id: 10, title: "Dracaena", price: "Pret: 89.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Dracaena.jpg"},
-    { id: 11, title: "Ficus", price: "Pret: 349.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Ficus.jpeg"},
-    { id: 12, title: "Areca", price: "Pret: 109.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Areca.jpeg"},
+    { id: 1, idActive: false, title: "Bonsai", price: "Pret: 79.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Bonsai.jpeg"},
+    { id: 2, idActive: false, title: "Bambus", price: "Pret: 59.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Bambus.jpeg"},
+    { id: 3, idActive: false, title: "Cactus", price: "Pret: 7,89 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Cactus.jpeg"},
+    { id: 4, idActive: false, title: "Orhidee", price: "Pret: 29.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Orhidee.jpeg"},
+    { id: 5, idActive: false, title: "Buchet Flori", price: "Pret: 74.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/BuchetFlori.jpeg",},
+    { id: 6, idActive: false, title: "Aloe Vera", price: "Pret: 39.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/AloeVera.jpeg"},
+    { id: 7, idActive: false, title: "Lavanda", price: "Pret: 24.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Lavanda.jpeg"},
+    { id: 8, idActive: false, title: "Feriga", price: "Pret: 34.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Feriga.jpg"},
+    { id: 9, idActive: false, title: "Craciunita", price: "Pret: 44.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Craciunita.jpg"},
+    { id: 10, idActive: false, title: "Dracaena", price: "Pret: 89.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Dracaena.jpg"},
+    { id: 11, idActive: false, title: "Ficus", price: "Pret: 349.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Ficus.jpeg"},
+    { id: 12, idActive: false, title: "Areca", price: "Pret: 109.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Areca.jpeg"},
 ];
 
     // Adăugăm doar produsele care nu există deja ${product.removable ? `<div class="buy-container"><button class="${product.class2}">Remove</button></div>` : ""}
@@ -79,10 +79,12 @@ function loadProducts() {
     // Salvăm produsele actualizate în localStorage
     localStorage.setItem("products", JSON.stringify(products));
 
+    
+
     // Parcurgem toate produsele și le afișăm pe pagină
     products.forEach((product, index) => {
         const inputHTML = `
-    <div class="own-merch" data-index="${index}" data-id="${product.id}">
+    <div class="own-merch" data-index="${index}">
         <div class="image-container"><img src="${product.image}" class="items-image"></div>
         <p class="title">${product.title}</p>
         <p class="prience">${product.price}</p>
@@ -90,7 +92,10 @@ function loadProducts() {
             <div class="buy-container"><button class="${product.class1}">BUY</button></div><br>
             ${product.removable ? `<div class="buy-container"><button class="${product.class2}">Remove</button></div>` : ""}
         </div>
-        <div class="buy-container"><button class="see-details">See Details</button></div>
+        <div class="buy-container">
+        <a href="products.html">
+        <button class="see-details">See details</button></a>
+        </div>
     </div>
 `;
 
@@ -98,7 +103,22 @@ function loadProducts() {
 
     });
 
-    document.querySelectorAll('.see-details').forEach(el => {
+    const details = document.querySelectorAll('.see-details');
+
+    details.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const index = e.target.closest('.own-merch').dataset.index;
+            let products = JSON.parse(localStorage.getItem('products'));
+
+            products.forEach(p => p.idActive = false);
+
+            products[index].idActive = true;
+
+            localStorage.setItem('products', JSON.stringify(products));
+        })
+    })
+
+    /*document.querySelectorAll('.see-details').forEach(el => {
     el.addEventListener('click', function (e) {
         const productElement = e.target.closest('.own-merch');
         const productId = productElement.dataset.id;
@@ -107,7 +127,7 @@ function loadProducts() {
         window.location.href = `products.html?id=${productId}`;
 
     });
-});
+});*/
 
     // Adăugăm event listeners pentru butoanele "Remove" și "Buy"
     document.querySelectorAll(".remove").forEach(button => {

@@ -56,14 +56,20 @@ document.querySelectorAll('.nav-button').forEach(button => {
 })
 
 
-const params = new URLSearchParams(window.location.search);
-        const productId = params.get('id');
+const products = JSON.parse(localStorage.getItem('products')) || [];
 
-        // 2. Luăm lista produselor din localStorage
-        const products = JSON.parse(localStorage.getItem('products')) || [];
+const activeProducts = products.find(p => p.idActive);
 
-        // 3. Căutăm produsul cu id-ul corespunzător
-        const product = products.find(p => String(p.id) === productId);
+document.getElementById('product').textContent = activeProducts.title;
 
-        // 4. Dacă există produsul, afișăm detaliile lui
-        document.getElementById('test').textContent = product.title;
+document.getElementById('image').src = activeProducts.image;
+
+document.getElementById('title').textContent = activeProducts.title;
+
+document.getElementById('description').textContent = "Not ready yet!";
+
+document.getElementById('price').textContent = activeProducts.price;
+
+
+///////////////////////////////////////////////////////////////////////////
+

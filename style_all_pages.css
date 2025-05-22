@@ -282,6 +282,18 @@ button{
     align-items: center;
 }
 
+.dark-mode .see-details{
+    color: white;
+    background-color: rgb(52, 51, 51);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin-top: 5px;
+    position: relative;
+    left: -2px;
+}
 
 .see-details{
     color: green;
@@ -313,20 +325,8 @@ button{
         margin-top: 0px;
         bottom: 11px;
     }
+}
 
-    .dark-mode .see-details{
-    color: white;
-    background-color: rgb(52, 51, 51);
-    border: 1px solid white;
-    border-radius: 10px;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 5px;
-    position: relative;
-    left: -2px;
-}
-}
 
 .dark-mode .see-details{
     color: white;
@@ -1769,4 +1769,11 @@ svg{
     .see-details{
         padding-left: 15px;
     }
+}
+
+#anunt{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 25px;
 }
