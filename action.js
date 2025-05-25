@@ -158,8 +158,6 @@ dropdownMenuPrice.addEventListener("click", function() {
 
 
 }
-
-
 // Apelează funcția la încărcarea paginii
 window.addEventListener("load", loadProducts);
 
@@ -210,6 +208,7 @@ function addToCart(event) {
 
 // Funcție pentru încărcarea și afișarea produselor din coș
 function loadCartItems() {
+    
     const cartAdded = document.getElementById("cart-added");
     cartAdded.innerHTML = "";
 
@@ -218,10 +217,22 @@ function loadCartItems() {
 
     cartItems.forEach((item, index) => {
         // Calculează prețul total pentru fiecare produs
-        const price = parseFloat(item.price.replace("Pret: ", "").replace(" lei", "").replace(",", "."));
+       
+        let rawPrice = item.price || "";
+
+if (typeof rawPrice !== "string") {
+    rawPrice = String(rawPrice);
+}
+
+const cleanedPrice = rawPrice
+    .replace("Pret: ", "")
+    .replace(" lei", "")
+    .replace(",", ".");
+
+const price = parseFloat(cleanedPrice) || 0;
+
         const totalPrice = price * item.quantity;
         totalSum += totalPrice; // Adaugă la suma totală
-
         const cartItemHTML = `
             <div class="element-added" data-index="${index}">
                 <p class="product-class">${item.title}</p>

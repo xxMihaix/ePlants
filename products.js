@@ -73,3 +73,135 @@ document.getElementById('price').textContent = activeProducts.price;
 
 ///////////////////////////////////////////////////////////////////////////
 
+//cartProducts = JSON.parse(localStorage.getItem('cartItems'));
+
+//console.log(cartProducts);
+
+
+
+function addToCart() {
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+
+    const productElement = products.find( p =>p.idActive);
+    const product = {
+        title: productElement.title,
+        price: productElement.price,
+        image: productElement.src,
+        quantity: 1 // Cantitatea inițială este 1
+    };
+
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    // Verifică dacă produsul există deja în coș
+    const existingProduct = cartItems.find(item => item.title === product.title);
+    if (existingProduct) {
+        existingProduct.quantity += 1; // Crește cantitatea
+    } else {
+        cartItems.push(product); // Adaugă un produs nou
+    }
+
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    alert("Produsul a fost adăugat în coș!");
+    loadCartItems();
+}
+
+function loadCartItems () {
+    
+    const cartAdded = document.getElementById("cart-added");
+    cartAdded.innerHTML = "";
+
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    let totalSum = 0; // Variabilă pentru suma totală
+
+    cartItems.forEach((item, index) => {
+        // Calculează prețul total pentru fiecare produs
+        
+        let rawPrice = item.price || "";
+    if (typeof rawPrice !== "string") {
+        rawPrice = String(rawPrice);
+    }
+    rawPrice = rawPrice.replace("Pret: ", "").replace(" lei", "").replace(",", ".");
+
+    const price = parseFloat(rawPrice) || 0;
+    const totalPrice = price * item.quantity;
+    totalSum += totalPrice;
+
+        const cartItemHTML = `
+            <div class="element-added" data-index="${index}">
+                <p class="product-class">${item.title}</p>
+                <p class="product-class">${item.price}</p>
+                <div class="quantity">
+                    <button class="quantity-class decrease">-</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="quantity-class increase">+</button>
+                </div>
+                <button class="remove-from-cart">Remove</button>
+            </div>
+        `;
+        cartAdded.insertAdjacentHTML("beforeend", cartItemHTML);
+    });
+
+    // Afișează suma totală
+    const totalAmountElement = document.getElementById("total-amount");
+    totalAmountElement.textContent = `${totalSum.toFixed(2)} lei`;
+
+    // Adaugă event listeners pentru butoanele de creștere/scădere
+    const decreaseButtons = document.querySelectorAll(".decrease");
+    decreaseButtons.forEach(button => {
+        button.addEventListener("click", decreaseQuantity);
+    });
+
+    const increaseButtons = document.querySelectorAll(".increase");
+    increaseButtons.forEach(button => {
+        button.addEventListener("click", increaseQuantity);
+    });
+
+    // Adaugă event listeners pentru butoanele de ștergere
+    const removeButtons = document.querySelectorAll(".remove-from-cart");
+    removeButtons.forEach(button => {
+        button.addEventListener("click", removeFromCart);
+    });
+
+function decreaseQuantity(event) {
+    const itemElement = event.target.closest(".element-added");
+    const index = itemElement.getAttribute("data-index");
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    if (cartItems[index].quantity > 1) {
+        cartItems[index].quantity -= 1; // Scade cantitatea
+    } else {
+        cartItems.splice(index, 1); // Șterge produsul dacă cantitatea este 0
+    }
+
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    loadCartItems(); // Reîncarcă coșul pentru a actualiza suma totală
+}
+
+// Funcție pentru creșterea cantității
+function increaseQuantity(event) {
+    const itemElement = event.target.closest(".element-added");
+    const index = itemElement.getAttribute("data-index");
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    cartItems[index].quantity += 1; // Crește cantitatea
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    loadCartItems(); // Reîncarcă coșul pentru a actualiza suma totală
+}
+
+// Funcție pentru ștergerea unui produs din coș
+function removeFromCart(event) {
+    const itemElement = event.target.closest(".element-added");
+    const index = itemElement.getAttribute("data-index");
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    cartItems.splice(index, 1); // Șterge produsul
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    loadCartItems(); // Reîncarcă coșul pentru a actualiza suma totală
+}
+
+}
+
+// Încarcă produsele și coșul la încărcarea paginii
+window.addEventListener("load", () => {
+    loadCartItems();
+});
