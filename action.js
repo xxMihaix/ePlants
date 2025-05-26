@@ -49,22 +49,22 @@ function loadProducts() {
 
    // Definim produsele predefinite
    const devProducts = [
-    { id: 1, idActive: false, title: "Bonsai", price: "Pret: 79.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Bonsai.jpeg"},
-    { id: 2, idActive: false, title: "Bambus", price: "Pret: 59.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Bambus.jpeg"},
-    { id: 3, idActive: false, title: "Cactus", price: "Pret: 7,89 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Cactus.jpeg"},
-    { id: 4, idActive: false, title: "Orhidee", price: "Pret: 29.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Orhidee.jpeg"},
-    { id: 5, idActive: false, title: "Buchet Flori", price: "Pret: 74.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/BuchetFlori.jpeg",},
-    { id: 6, idActive: false, title: "Aloe Vera", price: "Pret: 39.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/AloeVera.jpeg"},
-    { id: 7, idActive: false, title: "Lavanda", price: "Pret: 24.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Lavanda.jpeg"},
-    { id: 8, idActive: false, title: "Feriga", price: "Pret: 34.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Feriga.jpg"},
-    { id: 9, idActive: false, title: "Craciunita", price: "Pret: 44.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Craciunita.jpg"},
-    { id: 10, idActive: false, title: "Dracaena", price: "Pret: 89.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Dracaena.jpg"},
-    { id: 11, idActive: false, title: "Ficus", price: "Pret: 349.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Ficus.jpeg"},
-    { id: 12, idActive: false, title: "Areca", price: "Pret: 109.99 lei", class1: "buy-dev", class2: "remove", removable: false, image: "Images/Areca.jpeg"},
+    { id: 1, idActive: false, title: "Bonsai", price: "Pret: 79.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Arbore în miniatură cultivat artistic, ideal pentru decor interior; simbolizează armonia și echilibrul.', image: "Images/Bonsai/Bonsai.jpeg", image2: "Images/Bonsai/Bonsai2.jpg", image3: "Images/Bonsai/Bonsai3.jpg"},
+    { id: 2, idActive: false, title: "Bambus", price: "Pret: 59.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Plantă decorativă elegantă și ușor de întreținut, asociată cu norocul și energia pozitivă.', image: "Images/Bambus/Bambus.jpeg", image2: "Images/Bambus/Bambus2.jpeg", image3: "Images/Bambus/Bambus3.jpg"},
+    { id: 3, idActive: false, title: "Cactus", price: "Pret: 7,89 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Plantă suculentă rezistentă, perfectă pentru spații însorite și persoane ocupate – necesită udare rară.', image: "Images/Cactus/Cactus.jpeg", image2: "Images/Cactus/Cactus2.jpeg", image3: "Images/Cactus/Cactus3.jpg"},
+    { id: 4, idActive: false, title: "Orhidee", price: "Pret: 29.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Floare exotică rafinată, apreciată pentru frumusețea delicată și eleganță; înflorește pe perioade îndelungate.', image: "Images/Orhidee/Orhidee.jpeg", image2: "Images/Orhidee/Orhidee2.jpeg", image3: "Images/Orhidee/Orhidee3.jpg"},
+    { id: 5, idActive: false, title: "Buchet Flori", price: "Pret: 74.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Aranjament floral variat, ideal pentru cadouri sau decor; adaugă culoare și prospețime oricărui spațiu.', image: "Images/BuchetFlori/BuchetFlori.jpeg", image2: "Images/BuchetFlori/BuchetFlori2.jpeg", image3: "Images/BuchetFlori/BuchetFlori3.jpeg"},
+    { id: 6, idActive: false, title: "Aloe Vera", price: "Pret: 39.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Plantă medicinală cu proprietăți calmante și detoxifiante, excelentă pentru piele; ușor de întreținut.', image: "Images/AloeVera/AloeVera.jpeg", image2: "Images/AloeVera/AloeVera2.jpeg", image3: "Images/AloeVera/AloeVera3.jpg"},
+    { id: 7, idActive: false, title: "Lavanda", price: "Pret: 24.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Plantă aromată cu flori mov, folosită pentru relaxare și parfumarea spațiului; atrage albinele și alungă insectele.', image: "Images/Lavanda/Lavanda.jpeg", image2: "Images/Lavanda/Lavanda2.jpeg", image3: "Images/Lavanda/Lavanda3.jpeg"},
+    { id: 8, idActive: false, title: "Feriga", price: "Pret: 34.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Plantă verde decorativă, ideală pentru interior umed și umbrit; purifică aerul și adaugă prospețime.', image: "Images/Feriga/Feriga.jpg", image2: "Images/Feriga/Feriga2.png", image3: "Images/Feriga/Feriga3.jpg"},
+    { id: 9, idActive: false, title: "Craciunita", price: "Pret: 44.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Plantă festivă cu frunze roșii strălucitoare, simbol al sărbătorilor de iarnă; necesită lumină indirectă.', image: "Images/Craciunita/Craciunita.jpg", image2: "Images/Craciunita/Craciunita2.jpeg", image3: "Images/Craciunita/Craciunita3.jpg"},
+    { id: 10, idActive: false, title: "Dracaena", price: "Pret: 89.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Plantă tropicală cu aspect elegant, ușor de întreținut și bună pentru purificarea aerului din interior.', image: "Images/Dracaena/Dracaena.jpg", image2: "Images/Dracaena/Dracaena2.jpeg", image3: "Images/Dracaena/Dracaena3.jpeg"},
+    { id: 11, idActive: false, title: "Ficus", price: "Pret: 349.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Plantă de apartament de mari dimensiuni, cu frunziș bogat; adaugă un aer tropical și relaxant.', image: "Images/Ficus/Ficus.jpeg", image2: "Images/Ficus/Ficus2.jpg", image3: "Images/Ficus/Ficus3.jpeg"},
+    { id: 12, idActive: false, title: "Areca", price: "Pret: 109.99 lei", class1: "buy-dev", class2: "remove", removable: false, description: 'Palmier de interior cu frunze elegante, foarte eficient în filtrarea aerului; ideal pentru colțuri luminoase.', image: "Images/Areca/Areca.jpeg", image2: "Images/Areca/Areca2.jpeg", image3: "Images/Areca/Areca3.jpeg"},
 ];
 
     // Adăugăm doar produsele care nu există deja ${product.removable ? `<div class="buy-container"><button class="${product.class2}">Remove</button></div>` : ""}
-    //products.splice(0, 20);
+    products.splice(0, 20);
 
     
     

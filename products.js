@@ -64,11 +64,52 @@ document.getElementById('product').textContent = activeProducts.title;
 
 document.getElementById('image').src = activeProducts.image;
 
-document.getElementById('title').textContent = activeProducts.title;
-
-document.getElementById('description').textContent = "Not ready yet!";
+document.getElementById('description').textContent = activeProducts.description;
 
 document.getElementById('price').textContent = activeProducts.price;
+
+///////////////////////////////////////////////////////////////////////////
+
+image = document.getElementById('image');
+
+
+mini1 = document.getElementById('mini1');
+mini1.src = activeProducts.image;
+
+mini1.addEventListener('click', function(){
+    image.style.opacity = 0;
+
+    setTimeout(() => {
+        image.src = activeProducts.image;
+        image.style.opacity = 1;
+    }, 300)
+})
+
+
+mini2 = document.getElementById('mini2');
+mini2.src = activeProducts.image2;
+
+mini2.addEventListener('click', function(){
+    image.style.opacity = 0;
+
+    setTimeout(() => {
+        image.src = activeProducts.image2;
+        image.style.opacity = 1;
+    }, 300)
+})
+
+
+mini3 = document.getElementById('mini3');
+mini3.src = activeProducts.image3;
+
+mini3.addEventListener('click', function(){
+    image.style.opacity = 0;
+
+    setTimeout(() => {
+        image.src = activeProducts.image3;
+        image.style.opacity = 1;
+    }, 300)
+})
 
 
 ///////////////////////////////////////////////////////////////////////////
