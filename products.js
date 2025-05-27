@@ -1,6 +1,5 @@
 
 
-
 const openCart = document.querySelectorAll('.functionality');
 const cartContainer = document.getElementById('cart-container');
 const closeCart = document.getElementById('cart-exit');
@@ -111,6 +110,33 @@ mini3.addEventListener('click', function(){
     }, 300)
 })
 
+document.addEventListener('DOMContentLoaded', function() {
+
+const text1 = document.getElementById('text1');
+const text2 = document.getElementById('text2');
+const text3 = document.getElementById('text3');
+const text4 = document.getElementById('text4');
+
+const src1 = document.getElementById('srcc1');
+const src2 = document.getElementById('srcc2');
+const src3 = document.getElementById('srcc3');
+const src4 = document.getElementById('srcc4');
+
+const productss = [...products].sort(() => 0.5 - Math.random()).slice(0,4);
+
+text1.textContent = productss[0].title;
+src1.src = productss[0].image;
+
+text2.textContent = products[1].title;
+src2.src = productss[1].image;
+
+text3.textContent = products[2].title;
+src3.src = productss[2].image;
+
+text4.textContent = products[3].title;
+src4.src = productss[3].image;
+
+})
 
 ///////////////////////////////////////////////////////////////////////////
 
