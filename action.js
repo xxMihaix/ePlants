@@ -93,8 +93,7 @@ function loadProducts() {
             ${product.removable ? `<div class="buy-container"><button class="${product.class2}">Remove</button></div>` : ""}
         </div>
         <div class="buy-container">
-        <a href="products.html">
-        <button class="see-details">See details</button></a>
+        <button class="see-details">See details</button>
         </div>
     </div>
 `;
@@ -105,6 +104,7 @@ function loadProducts() {
 
     const details = document.querySelectorAll('.see-details');
 
+    /*
     details.forEach(button => {
         button.addEventListener('click', (e) => {
             const index = e.target.closest('.own-merch').dataset.index;
@@ -116,7 +116,27 @@ function loadProducts() {
 
             localStorage.setItem('products', JSON.stringify(products));
         })
-    })
+    })*/
+
+        document.querySelectorAll('.see-details').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const index = e.target.closest('.own-merch').dataset.index;
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+
+        // Dezactivează toate
+        products.forEach(p => p.isActive = false);
+
+        // Activează produsul pe baza indexului
+        products[index].isActive = true;
+
+        localStorage.setItem('products', JSON.stringify(products));
+
+        // Redirecționează spre pagina de detalii
+        window.location.href = 'products.html'; // schimbă cu ruta ta reală
+    });
+});
+    
+
 
     /*document.querySelectorAll('.see-details').forEach(el => {
     el.addEventListener('click', function (e) {

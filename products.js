@@ -1,3 +1,78 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const text1 = document.getElementById('text1');
+    const text2 = document.getElementById('text2');
+    const text3 = document.getElementById('text3');
+    const text4 = document.getElementById('text4');
+
+    const src1 = document.getElementById('srcc1');
+    const src2 = document.getElementById('srcc2');
+    const src3 = document.getElementById('srcc3');
+    const src4 = document.getElementById('srcc4');
+
+    const divs = [
+        document.getElementById('prod1'),
+        document.getElementById('prod2'),
+        document.getElementById('prod3'),
+        document.getElementById('prod4')
+    ];
+
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const productss = [...products].sort(() => 0.5 - Math.random()).slice(0, 4);
+
+    const texts = [text1, text2, text3, text4];
+    const srcs = [src1, src2, src3, src4];
+
+    for (let i = 0; i < 4; i++) {
+        texts[i].textContent = productss[i].title;
+        srcs[i].src = productss[i].image;
+    }
+
+    // Click pe produse aleatorii
+    divs.forEach((div, i) => {
+        div.addEventListener('click', () => {
+            const selected = productss[i];
+            products.forEach(p => p.isActive = false);
+
+            const actual = products.find(p => p.id === selected.id);
+            if (actual) actual.isActive = true;
+
+            localStorage.setItem('products', JSON.stringify(products));
+            updateProductDetails(actual);
+        });
+    });
+
+    // La încărcare: arată produsul activ
+    const active = products.find(p => p.isActive);
+    if (active) updateProductDetails(active);
+
+    function updateProductDetails(prod) {
+        document.getElementById('product').textContent = prod.title;
+        document.getElementById('image').src = prod.image;
+        document.getElementById('description').textContent = prod.description;
+        document.getElementById('price').textContent = prod.price;
+
+        const image = document.getElementById('image');
+        const mini1 = document.getElementById('mini1');
+        const mini2 = document.getElementById('mini2');
+        const mini3 = document.getElementById('mini3');
+
+        mini1.src = prod.image;
+        mini2.src = prod.image2;
+        mini3.src = prod.image3;
+
+        mini1.onclick = () => fadeImage(prod.image);
+        mini2.onclick = () => fadeImage(prod.image2);
+        mini3.onclick = () => fadeImage(prod.image3);
+
+        function fadeImage(src) {
+            image.style.opacity = 0;
+            setTimeout(() => {
+                image.src = src;
+                image.style.opacity = 1;
+            }, 300);
+        }
+    }
+});
 
 
 const openCart = document.querySelectorAll('.functionality');
@@ -54,19 +129,6 @@ document.querySelectorAll('.nav-button').forEach(button => {
 });
 })
 
-
-const products = JSON.parse(localStorage.getItem('products')) || [];
-
-const activeProducts = products.find(p => p.idActive);
-
-document.getElementById('product').textContent = activeProducts.title;
-
-document.getElementById('image').src = activeProducts.image;
-
-document.getElementById('description').textContent = activeProducts.description;
-
-document.getElementById('price').textContent = activeProducts.price;
-
 ///////////////////////////////////////////////////////////////////////////
 
 image = document.getElementById('image');
@@ -108,34 +170,6 @@ mini3.addEventListener('click', function(){
         image.src = activeProducts.image3;
         image.style.opacity = 1;
     }, 300)
-})
-
-document.addEventListener('DOMContentLoaded', function() {
-
-const text1 = document.getElementById('text1');
-const text2 = document.getElementById('text2');
-const text3 = document.getElementById('text3');
-const text4 = document.getElementById('text4');
-
-const src1 = document.getElementById('srcc1');
-const src2 = document.getElementById('srcc2');
-const src3 = document.getElementById('srcc3');
-const src4 = document.getElementById('srcc4');
-
-const productss = [...products].sort(() => 0.5 - Math.random()).slice(0,4);
-
-text1.textContent = productss[0].title;
-src1.src = productss[0].image;
-
-text2.textContent = products[1].title;
-src2.src = productss[1].image;
-
-text3.textContent = products[2].title;
-src3.src = productss[2].image;
-
-text4.textContent = products[3].title;
-src4.src = productss[3].image;
-
 })
 
 ///////////////////////////////////////////////////////////////////////////
