@@ -1,78 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const text1 = document.getElementById('text1');
-    const text2 = document.getElementById('text2');
-    const text3 = document.getElementById('text3');
-    const text4 = document.getElementById('text4');
 
-    const src1 = document.getElementById('srcc1');
-    const src2 = document.getElementById('srcc2');
-    const src3 = document.getElementById('srcc3');
-    const src4 = document.getElementById('srcc4');
-
-    const divs = [
-        document.getElementById('prod1'),
-        document.getElementById('prod2'),
-        document.getElementById('prod3'),
-        document.getElementById('prod4')
-    ];
-
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    const productss = [...products].sort(() => 0.5 - Math.random()).slice(0, 4);
-
-    const texts = [text1, text2, text3, text4];
-    const srcs = [src1, src2, src3, src4];
-
-    for (let i = 0; i < 4; i++) {
-        texts[i].textContent = productss[i].title;
-        srcs[i].src = productss[i].image;
-    }
-
-    // Click pe produse aleatorii
-    divs.forEach((div, i) => {
-        div.addEventListener('click', () => {
-            const selected = productss[i];
-            products.forEach(p => p.isActive = false);
-
-            const actual = products.find(p => p.id === selected.id);
-            if (actual) actual.isActive = true;
-
-            localStorage.setItem('products', JSON.stringify(products));
-            updateProductDetails(actual);
-        });
-    });
-
-    // La încărcare: arată produsul activ
-    const active = products.find(p => p.isActive);
-    if (active) updateProductDetails(active);
-
-    function updateProductDetails(prod) {
-        document.getElementById('product').textContent = prod.title;
-        document.getElementById('image').src = prod.image;
-        document.getElementById('description').textContent = prod.description;
-        document.getElementById('price').textContent = prod.price;
-
-        const image = document.getElementById('image');
-        const mini1 = document.getElementById('mini1');
-        const mini2 = document.getElementById('mini2');
-        const mini3 = document.getElementById('mini3');
-
-        mini1.src = prod.image;
-        mini2.src = prod.image2;
-        mini3.src = prod.image3;
-
-        mini1.onclick = () => fadeImage(prod.image);
-        mini2.onclick = () => fadeImage(prod.image2);
-        mini3.onclick = () => fadeImage(prod.image3);
-
-        function fadeImage(src) {
-            image.style.opacity = 0;
-            setTimeout(() => {
-                image.src = src;
-                image.style.opacity = 1;
-            }, 300);
-        }
-    }
-});
 
 
 const openCart = document.querySelectorAll('.functionality');
@@ -129,14 +55,70 @@ document.querySelectorAll('.nav-button').forEach(button => {
 });
 })
 
-///////////////////////////////////////////////////////////////////////////
+
+document.addEventListener('DOMContentLoaded', function() {
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const productss = [...products].sort(() => 0.5 - Math.random()).slice(0, 4);
+
+    img1 = document.getElementById('srcc1');
+    img2 = document.getElementById('srcc2');
+    img3 = document.getElementById('srcc3');
+    img4 = document.getElementById('srcc4');
+
+    title1 = document.getElementById('text1');
+    title2 = document.getElementById('text2');
+    title3 = document.getElementById('text3');
+    title4 = document.getElementById('text4');
+
+    divs = [
+        document.getElementById('prod1'),
+        document.getElementById('prod2'),
+        document.getElementById('prod3'),
+        document.getElementById('prod4')
+    ]
+
+    const img = [img1, img2, img3, img4];
+    const text = [title1, title2, title3, title4];
+
+    for(let i = 0; i < 4; i++){
+        text[i].textContent = productss[i].title;
+        img[i].src = productss[i].image;
+    }
+
+    divs.forEach((div, i) => {
+        div.addEventListener('click', () => {
+            const selected = productss[i];
+            products.forEach(p => p.isActive = false);
+
+            const actual = products.find(p => p.id === selected.id);
+            if (actual) actual.isActive = true;
+
+            localStorage.setItem('products', JSON.stringify(products));
+            console.log(actual);
+            location.reload();
+        });
+    });
+    load();
+})
+
+function load(){
+
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const activeProducts = products.find(p => p.isActive);
+
+    document.getElementById('product').textContent = activeProducts.title;
+    document.getElementById('image').src = activeProducts.image;
+    document.getElementById('description').textContent = activeProducts.description;
+    document.getElementById('price').textContent = activeProducts.price;
+} 
+
+
+const products = JSON.parse(localStorage.getItem('products')) || [];
+const activeProducts = products.find(p => p.isActive);
 
 image = document.getElementById('image');
-
-
 mini1 = document.getElementById('mini1');
 mini1.src = activeProducts.image;
-
 mini1.addEventListener('click', function(){
     image.style.opacity = 0;
 
@@ -146,10 +128,8 @@ mini1.addEventListener('click', function(){
     }, 300)
 })
 
-
 mini2 = document.getElementById('mini2');
 mini2.src = activeProducts.image2;
-
 mini2.addEventListener('click', function(){
     image.style.opacity = 0;
 
@@ -159,10 +139,8 @@ mini2.addEventListener('click', function(){
     }, 300)
 })
 
-
 mini3 = document.getElementById('mini3');
 mini3.src = activeProducts.image3;
-
 mini3.addEventListener('click', function(){
     image.style.opacity = 0;
 
@@ -172,18 +150,11 @@ mini3.addEventListener('click', function(){
     }, 300)
 })
 
-///////////////////////////////////////////////////////////////////////////
-
-//cartProducts = JSON.parse(localStorage.getItem('cartItems'));
-
-//console.log(cartProducts);
-
-
 
 function addToCart() {
     const products = JSON.parse(localStorage.getItem('products')) || [];
 
-    const productElement = products.find( p =>p.idActive);
+    const productElement = products.find( p =>p.isActive);
     const product = {
         title: productElement.title,
         price: productElement.price,

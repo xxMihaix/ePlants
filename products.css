@@ -10,6 +10,10 @@ html, body {
     flex-direction: column;
 }
 
+.dark-mode body{
+    transition: 0s;
+}
+
 main{
     display: flex;
     justify-content: center;
@@ -62,6 +66,10 @@ main{
     width: 100%;
 }
 
+#description p{
+    text-align: center;
+}
+
 #image{
     border-radius: 15px;
     height: 300px;
@@ -95,6 +103,10 @@ button:hover{
     padding: 12px;
     font-weight: bold;
     font-size: 15px;
+}
+
+.dark-mode .buy-dev:hover{
+    border: none;
 }
 
 /* --------------------  M  ----------------------- */
@@ -169,6 +181,7 @@ button:hover{
     }
     #description{
         display: flex;
+        text-align: center;
     }
     #section2 div{
         display: flex;

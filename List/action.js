@@ -1,4 +1,33 @@
 
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("second-container");
+    if (container) {
+        renderList();
+    } else {
+        console.log("Nu e pagina cu lista, nu încerc renderList");
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    if (localStorage.getItem("isDark") === "true") {
+
+        console.log("Tema întunecată restaurată.");
+
+        elements = document.querySelectorAll('body');
+
+        elements.forEach( element => {
+            element.classList.add("dark-mode");
+        });
+    }
+    else{ 
+        console.log(" NU tema întunecată restaurată.");
+    }
+
+});
+
 
 let list = JSON.parse(localStorage.getItem("list")) || [];
 
@@ -81,28 +110,11 @@ function addList() {
     renderList();
 }
 
-window.onload = renderList;
+//window.onload = renderList;
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
 
-
-    if (localStorage.getItem("isDark") === "true") {
-
-        console.log("Tema întunecată restaurată.");
-
-        elements = document.querySelectorAll('body');
-
-        elements.forEach( element => {
-            element.classList.add("dark-mode");
-        });
-    }
-    else{ 
-        console.log(" NU tema întunecată restaurată.");
-    }
-
-});
 
 /*
 
