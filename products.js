@@ -77,12 +77,21 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('prod4')
     ]
 
+    prices = [
+        price1 = document.getElementById('price1'),
+        price2 = document.getElementById('price2'),
+        price3 = document.getElementById('price3'),
+        price4 = document.getElementById('price4')
+    ]
+
     const img = [img1, img2, img3, img4];
     const text = [title1, title2, title3, title4];
+    const price = [price1, price2, price3, price4];
 
     for(let i = 0; i < 4; i++){
         text[i].textContent = productss[i].title;
         img[i].src = productss[i].image;
+        price[i].textContent = productss[i].price;
     }
 
     divs.forEach((div, i) => {
@@ -95,6 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             localStorage.setItem('products', JSON.stringify(products));
             console.log(actual);
+
+            localStorage.setItem('scrollToBody', 'true');
             location.reload();
         });
     });
@@ -110,6 +121,16 @@ function load(){
     document.getElementById('image').src = activeProducts.image;
     document.getElementById('description').textContent = activeProducts.description;
     document.getElementById('price').textContent = activeProducts.price;
+
+    if (localStorage.getItem('scrollToBody') === 'true') {
+        localStorage.removeItem('scrollToBody');
+
+        const body = document.getElementById('body');
+        if (body) {
+            const top = body.getBoundingClientRect().top + window.pageYOffset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+    }
 } 
 
 

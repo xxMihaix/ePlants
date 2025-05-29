@@ -109,6 +109,22 @@ button:hover{
     border: none;
 }
 
+.prod {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 220px;
+    border: 2px solid green;
+    border-radius: 15px;
+}
+
+.dark-mode .prod {
+    border: 2px solid white;
+}
+
+
 /* --------------------  M  ----------------------- */
 
 #section1-1{
@@ -136,6 +152,8 @@ button:hover{
     margin-left: 25px;
     margin-right: 25px;
 }
+
+
 
 /**************************************************/
 
@@ -193,6 +211,9 @@ button:hover{
         justify-content: center;
         align-items: center;
     }
+    .prod{
+        height: 220px;
+    }
   }
 
 #container-prod{
@@ -209,13 +230,6 @@ button:hover{
         flex-wrap: wrap;
         padding-left: 20px;
         padding-right: 20px;
-}
-
-.prod{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
 }
 
 .soon{
@@ -268,13 +282,6 @@ button:hover{
     border-bottom: 3px solid white;
 }
 
-.prod{
-    height: 170px;
-    width: 120px;
-    border: 2px solid green;
-    border-radius: 15px;
-}
-
 .dark-mode .prod{
     border: 2px solid white;
 }
@@ -315,11 +322,10 @@ button:hover{
     }
     .prod{
         width: 110px;
-        height: 180px;
+        height: 200px;
     }
 }
 
-.prod{
-    display: flex;
-    flex-direction: column;
+.pret{
+    margin: 0px;
 }
